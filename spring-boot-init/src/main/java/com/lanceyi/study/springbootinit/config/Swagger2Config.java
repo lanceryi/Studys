@@ -29,8 +29,10 @@ public class Swagger2Config {
                 .globalOperationParameters(getParameters())
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                .paths(PathSelectors.any()).build().useDefaultResponseMessages(false);
+//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.basePackage("com.lanceyi.study.springbootinit.controller"))
+                .paths(PathSelectors.any())
+                .build().useDefaultResponseMessages(false);
     }
 
     /**
@@ -39,11 +41,26 @@ public class Swagger2Config {
      * @return
      */
     private ApiInfo apiInfo() {
+
+        StringBuilder desc = new StringBuilder();
+        desc.append("</br>");
+        desc.append("<strong>主机说明：</strong></br>");
+        desc.append("<ul>");
+        desc.append("<li>测试地址：http://192.168.1.87:8080</li></br>");
+        desc.append("<li>正式地址：http://xxx.api.com</li></br>");
+        desc.append("</ul>");
+        desc.append("</br>");
+        desc.append("<strong>其他文档：</strong></br></br>");
+        desc.append("</br>");
+        desc.append("</br>");
+        desc.append("<strong>全局返回说明：</strong></br></br>");
+        desc.append("0：操作成功；小于0：系统错误； 大于0：业务错误 </br>");
+
         return new ApiInfoBuilder()
                 .title("Web RESTful API")
                 .version("1.0")
                 .termsOfServiceUrl("https://www.lanceyi.com")
-                .description("API 描述")
+                .description(desc.toString())
                 .contact(new Contact("Lanceyi", "https://www.lanceyi.com", "342003386@qq.com"))
                 .build();
     }
