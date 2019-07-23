@@ -1,0 +1,14 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: eukera-server
+
+# 禁用它的客户端注册行为
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
