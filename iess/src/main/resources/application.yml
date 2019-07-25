@@ -1,0 +1,40 @@
+# 端口
+server:
+  port: 8099
+
+spring:
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://ser1.seprain.com/iess?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 连接池
+    # 初始化连接数
+    initial-size: 1
+    # 最大连接数量
+    max-active: 3000
+    # 最小空闲数量
+    min-idle: 5
+    # 最大连接等待超时时长
+    max-wait: 70000
+    # 检测配置
+    validation-query: select 1
+    validation-query-timeout: 20
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+
+qiniu:
+  accessKey: MwLQ2KQUvpoJZldk8DDrxHmk7K2t1b-5kwbGJ4dC
+  secretKey: bPvkc-h75SxdF_dXD71EYorYsFeQObloDZoMcrzE
+  bucket: wx-mall
+  path: http://wxshop.lanceyi.com
+
+
+spring.jpa.show-sql: true
+spring.jpa.hibernate.ddl-auto: update
+spring.h2.console.enabled: true
+spring.jpa.open-in-view: true
+spring.data.jpa.repositories.bootstrap-mode: default
+logging.level.org.hibernate.SQL: debug
