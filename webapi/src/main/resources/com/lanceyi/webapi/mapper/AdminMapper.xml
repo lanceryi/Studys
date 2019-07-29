@@ -21,4 +21,5 @@
     <result column="root_id" jdbcType="VARCHAR" property="rootId" />
     <result column="note" jdbcType="VARCHAR" property="note" />
   </resultMap>
+
 </mapper>

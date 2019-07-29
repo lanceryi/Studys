@@ -39,7 +39,7 @@ spring:
 
 # mybatis
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:com.lanceyi.webapi.mapper/*.xml
   # 开启驼峰
   configuration:
     map-underscore-to-camel-case: true

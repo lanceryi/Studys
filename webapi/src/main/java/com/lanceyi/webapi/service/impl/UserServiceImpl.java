@@ -1,7 +1,12 @@
 package com.lanceyi.webapi.service.impl;
 
+import com.lanceyi.webapi.mapper.UserMapper;
+import com.lanceyi.webapi.model.User;
 import com.lanceyi.webapi.service.UserService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author Lance YI
@@ -10,4 +15,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Resource
+    UserMapper userMapper;
+
+    @Override
+    public List<User> getList() {
+        System.out.println("--------------------------");
+        List<User> users = userMapper.selectAll();
+        return users;
+    }
 }

@@ -5,9 +5,7 @@ import com.lanceyi.webapi.core.base.QueryListParam;
 import com.lanceyi.webapi.mapper.AdminMapper;
 import com.lanceyi.webapi.model.Admin;
 import com.lanceyi.webapi.service.AdminService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -18,14 +16,13 @@ import java.util.List;
 @Service
 public class AdminServiceImpl extends BaseService<AdminMapper,Admin> implements AdminService {
 
-
     @Override
     public List<Admin> queryAdminList(Admin admin, QueryListParam queryListParam) {
-        super.setPageQueryParam(queryListParam);
+//        super.setPageQueryParam(queryListParam);
 
-        List<Admin> list = this.queryAdminList(admin);
+//        List<Admin> list = this.queryAdminList(admin);
 
-        return list;
+        return null;
     }
     /**
      * 重载查询管理员列表
@@ -66,6 +63,7 @@ public class AdminServiceImpl extends BaseService<AdminMapper,Admin> implements 
 //        List<Admin> list = super.mapper.selectByExample(criteria);
 
         List<Admin> list = super.mapper.selectAll();
+        System.out.println("------------------------------------------------");
         return list;
     }
 }
