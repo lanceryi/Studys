@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <properties resource="mybatis-generator/generator.properties" />
+
+    <!--defaultModelType="flat" 大数据字段，不分表 -->
+    <context id="Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- 自动识别数据库关键字，默认false -->
+        <property name="autoDelimitKeywords" value="true" />
+        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错 -->
+        <property name="beginningDelimiter" value="`" />
+        <property name="endingDelimiter" value="`" />
+        <property name="javaFileEncoding" value="utf-8" />
+        <!--序列化 toString-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <!-- 自定义 mapper 生成插件 -->
+        <plugin type="${mapper.plugin}">
+            <property name="beginningDelimiter" value="`" />
+            <property name="endingDelimiter" value="`" />
+            <property name="mappers" value="${mapper.Mapper}"/>
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+        <!-- 注释 -->
+        <commentGenerator >
+            <property name="suppressAllComments" value="false"/><!-- 是否取消注释 -->
+            <property name="suppressDate" value="true" /> <!-- 是否生成注释代时间戳-->
+        </commentGenerator>
+
+        <!-- JDBC连接 -->
+        <jdbcConnection
+                driverClass="${driverClass}"
+                connectionURL="${url}"
+                userId="${username}"
+                password="${password}">
+            <property name="nullCatalogMeansCurrent" value="true"></property>
+        </jdbcConnection>
+
+        <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+         NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 生成实体类地址 -->
+        <javaModelGenerator targetPackage="${path}.model" targetProject="src/main/java">
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaModelGenerator>
+
+        <!-- 生成mapper xml文件 -->
+        <sqlMapGenerator targetPackage="${path}.mapper"  targetProject="src/main/resources">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <!-- 生成mapper xml对应Client-->
+        <javaClientGenerator targetPackage="${path}.mapper" targetProject="src/main/java" type="XMLMAPPER">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <!-- 配置表信息 -->
+        <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName 是要生成的实体类 enable*ByExample
+            是否生成 example类 -->
+
+        <!--<table tableName="address" domainObjectName="Address" />-->
+        <table tableName="admin" domainObjectName="Admin" />
+        <table tableName="user" domainObjectName="User" />
+        <!--<table tableName="nav" domainObjectName="Nav" />-->
+    </context>
+</generatorConfiguration>
