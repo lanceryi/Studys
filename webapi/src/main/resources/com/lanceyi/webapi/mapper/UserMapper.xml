@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanceyi.webapi.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.lanceyi.webapi.model.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="fromuser_one" jdbcType="INTEGER" property="fromuserOne" />
+    <result column="fromuser_two" jdbcType="INTEGER" property="fromuserTwo" />
+    <result column="fromuser_three" jdbcType="INTEGER" property="fromuserThree" />
+    <result column="invite_code" jdbcType="VARCHAR" property="inviteCode" />
+    <result column="qrcode" jdbcType="VARCHAR" property="qrcode" />
+    <result column="Invitations" jdbcType="TINYINT" property="invitations" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="login_pwd" jdbcType="VARCHAR" property="loginPwd" />
+    <result column="user_nickname" jdbcType="VARCHAR" property="userNickname" />
+    <result column="user_sex" jdbcType="TINYINT" property="userSex" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="user_email" jdbcType="VARCHAR" property="userEmail" />
+    <result column="user_photo" jdbcType="VARCHAR" property="userPhoto" />
+    <result column="user_effective" jdbcType="TINYINT" property="userEffective" />
+    <result column="user_activation" jdbcType="TINYINT" property="userActivation" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="last_time" jdbcType="INTEGER" property="lastTime" />
+    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="user_from" jdbcType="VARCHAR" property="userFrom" />
+    <result column="user_type" jdbcType="INTEGER" property="userType" />
+    <result column="user_score" jdbcType="INTEGER" property="userScore" />
+    <result column="user_money" jdbcType="DECIMAL" property="userMoney" />
+    <result column="total_assets" jdbcType="DECIMAL" property="totalAssets" />
+    <result column="pet_card_money" jdbcType="DECIMAL" property="petCardMoney" />
+    <result column="welfare_card" jdbcType="DECIMAL" property="welfareCard" />
+    <result column="invest_money" jdbcType="DECIMAL" property="investMoney" />
+    <result column="free_money" jdbcType="DECIMAL" property="freeMoney" />
+    <result column="ex_money" jdbcType="DECIMAL" property="exMoney" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="three_source" jdbcType="VARCHAR" property="threeSource" />
+    <result column="is_del" jdbcType="TINYINT" property="isDel" />
+    <result column="is_test" jdbcType="TINYINT" property="isTest" />
+    <result column="pc_token" jdbcType="VARCHAR" property="pcToken" />
+    <result column="wap_token" jdbcType="VARCHAR" property="wapToken" />
+    <result column="app_token" jdbcType="VARCHAR" property="appToken" />
+    <result column="bj_pc_token" jdbcType="VARCHAR" property="bjPcToken" />
+    <result column="bj_wap_token" jdbcType="VARCHAR" property="bjWapToken" />
+    <result column="is_cgb" jdbcType="BIT" property="isCgb" />
+    <result column="last_edit_time" jdbcType="INTEGER" property="lastEditTime" />
+    <result column="commission" jdbcType="DECIMAL" property="commission" />
+    <result column="is_login" jdbcType="BIT" property="isLogin" />
+    <result column="winning_num" jdbcType="INTEGER" property="winningNum" />
+    <result column="winning_lock" jdbcType="BIT" property="winningLock" />
+    <result column="referrer" jdbcType="VARCHAR" property="referrer" />
+    <result column="qr_share_name" jdbcType="VARCHAR" property="qrShareName" />
+    <result column="qr_share_code" jdbcType="VARCHAR" property="qrShareCode" />
+    <result column="qr_invite_code" jdbcType="VARCHAR" property="qrInviteCode" />
+    <result column="new_commission" jdbcType="DECIMAL" property="newCommission" />
+    <result column="share_name" jdbcType="VARCHAR" property="shareName" />
+    <result column="pork_quota_money" jdbcType="DECIMAL" property="porkQuotaMoney" />
+    <result column="cgb_employees" jdbcType="DECIMAL" property="cgbEmployees" />
+    <result column="referrer_key" jdbcType="VARCHAR" property="referrerKey" />
+    <result column="new_free_money" jdbcType="DECIMAL" property="newFreeMoney" />
+  </resultMap>
+</mapper>

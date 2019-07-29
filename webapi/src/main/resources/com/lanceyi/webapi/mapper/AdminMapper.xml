@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanceyi.webapi.mapper.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.lanceyi.webapi.model.Admin">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="login_pwd" jdbcType="VARCHAR" property="loginPwd" />
+    <result column="admin_sex" jdbcType="TINYINT" property="adminSex" />
+    <result column="admin_phone" jdbcType="VARCHAR" property="adminPhone" />
+    <result column="admin_activation" jdbcType="TINYINT" property="adminActivation" />
+    <result column="admin_effective" jdbcType="TINYINT" property="adminEffective" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="last_time" jdbcType="INTEGER" property="lastTime" />
+    <result column="admin_type" jdbcType="INTEGER" property="adminType" />
+    <result column="creator" jdbcType="INTEGER" property="creator" />
+    <result column="root_id" jdbcType="VARCHAR" property="rootId" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+  </resultMap>
+</mapper>
